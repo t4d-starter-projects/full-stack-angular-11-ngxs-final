@@ -1,0 +1,34 @@
+<div class="container" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px" fxLayoutAlign="flex-start"
+  [style.padding.px]="16">
+  <mat-card *ngIf="(currentUser$ | async)?.username" fxFlex="50">
+    <mat-card-title>
+      Welcome {{(currentUser$ | async)?.displayName}}
+    </mat-card-title>
+    <mat-card-content>
+      Please review the meny to the left to manage the store app. To view your profile, please click your name
+      in the upper-right hand corner. On your profile page, you can change your password.
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="!(currentUser$ | async)?.username" fxFlex="50">
+    <mat-card-title>
+      Welcome to the Store App!
+    </mat-card-title>
+    <mat-card-content>
+      Please login to access the site.
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="50">
+    <mat-card-title>
+      Login
+    </mat-card-title>
+    <mat-card-content>
+      <p *ngIf="!!(errorMessage$ | async)" class="mat-error error">
+        <mat-icon aria-hidden="false" aria-label="Error">error</mat-icon>
+        {{errorMessage$ | async}}
+      </p>
+      <app-login-form (login)="doLogin($event)" (clear)="doClear()"></app-login-form>
+    </mat-card-content>
+  </mat-card>
+</div>

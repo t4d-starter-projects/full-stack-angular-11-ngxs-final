@@ -1,0 +1,23 @@
+POST http://localhost:8080/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "adodsworth",
+  "password": "testpass",
+  "kind": "employee"
+}
+
+###
+
+GET http://localhost:8080/api/users/refresh HTTP/1.1
+Authorization: Bearer 
+###
+
+POST http://localhost:8080/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "afuller",
+  "password": "testpass",
+  "kind": "employee"
+}

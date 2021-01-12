@@ -1,0 +1,39 @@
+.buttons, .form-field {
+  text-align: center;
+  padding: 6px 0px;
+}
+
+.buttons > button {
+  margin: 4px;
+}
+
+.validation-summary-card {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  max-width: 400px;
+  padding: 0;
+}
+
+.validation-summary-header {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.validation-summary-title {
+  padding: 12px;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.mat-card-content {
+  padding: 8px 0;
+}
+
+.mat-list-base[dense] .mat-list-item.mat-list-item-with-avatar,
+.mat-list-base[dense] .mat-list-option.mat-list-item-with-avatar {
+  height: 32px;
+}
+
+.mat-list-base[dense] .mat-list-item {
+  font-size: 0.9rem;
+}

@@ -1,0 +1,45 @@
+<mat-card class="validation-summary-card" *ngIf="showLoginFormValidationSummary">
+  <mat-card-header class="validation-summary-header">
+    <mat-card-title class="validation-summary-title">
+      Errors
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list" dense>
+      <mat-list-item role="listitem" *ngIf="showUsernameError">
+        <mat-icon mat-list-icon>arrow_right</mat-icon>
+        Username is required.
+      </mat-list-item>
+      <mat-list-item role="listitem" *ngIf="showPasswordError">
+        <mat-icon mat-list-icon>arrow_right</mat-icon>
+        Password is required.
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+
+<form class="login-form" [formGroup]="loginForm" (submit)="doLogin()">
+
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" />
+      <mat-error *ngIf="showUsernameError">Username is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" />
+      <mat-error *ngIf="showPasswordError">Password is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="buttons">
+    <button type="submit" mat-raised-button color="primary">Login</button>
+    <button type="reset" mat-raised-button (click)="doClear()">Clear</button>
+  </div>
+
+</form>

@@ -1,0 +1,22 @@
+<div class="container" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px" fxLayoutAlign="flex-start"
+  [style.padding.px]="16">
+
+  <mat-card fxFlex="50">
+    <mat-card-title>
+      User Profile
+    </mat-card-title>
+    <mat-card-content>
+      <app-user-profile [userProfile]="(currentUser$ | async)"></app-user-profile>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="50">
+    <mat-card-title>
+      Change Password
+    </mat-card-title>
+    <mat-card-content>
+      <app-change-password-form (changePassword)="doChangePassword($event)"></app-change-password-form>
+    </mat-card-content>
+  </mat-card>
+
+</div>
