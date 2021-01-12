@@ -1,6 +1,6 @@
 # Mastering Full-Stack Development with Angular 11 Series on WintellectNOW
 
-This is the starter project for the ninth course in the series.
+This is the final version of the ngxs project.
 
 ## Prerequisites
 
